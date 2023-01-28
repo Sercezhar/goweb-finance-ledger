@@ -1,0 +1,52 @@
+@use '../../sass/mixins';
+@import '../../sass/variables';
+
+.logo {
+  @include mixins.font-style(28px, 1.35);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: #fff;
+  transition: scale 250ms $transition;
+  width: 246px;
+  cursor: pointer;
+
+  @media screen and (min-width: $tablet) {
+    @include mixins.font-style(35px, 1.37);
+
+    margin-bottom: 0;
+    width: 296px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 4px;
+  }
+
+  &:hover {
+    scale: 1.05;
+
+    & svg {
+      fill: $accent-color-hover;
+    }
+
+    & .text span {
+      color: $accent-color-hover;
+    }
+  }
+
+  & svg {
+    width: 40px;
+    height: 36px;
+    fill: $accent-color;
+    transition: fill 150ms $transition;
+  }
+}
+
+.text {
+  & span {
+    color: $accent-color;
+    transition: color 150ms $transition;
+  }
+}

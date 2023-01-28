@@ -1,0 +1,88 @@
+@use '../../sass/mixins';
+@import '../../sass/variables';
+
+.section {
+  color: $text-color;
+  background-color: #f4f4f4;
+
+  & img {
+    margin: 0 auto;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.content {
+  padding: 51px 20px 25px 20px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 56px 28px 77px 20px;
+  }
+}
+
+.title {
+  @include mixins.font-style(32px, 1.5);
+
+  margin-bottom: 59px;
+
+  @media screen and (min-width: $tablet) {
+    @include mixins.font-style(40px, 1.2);
+
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 31px;
+  }
+}
+
+.form {
+  & label {
+    position: relative;
+  }
+
+  & input {
+    @include mixins.font-style(16px, 1.44);
+
+    margin-bottom: 16px;
+    padding: 16px 8px;
+    width: calc(100% - 16px);
+    border: 1px solid #f5f5f5;
+    border-radius: 5px;
+    outline-color: $accent-color;
+
+    @media screen and (min-width: $tablet) {
+      @include mixins.font-style(18px, 1.39);
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 25px;
+    }
+
+    &::placeholder {
+      color: #808080;
+    }
+  }
+
+  & .inputEmail {
+    margin-bottom: 35px;
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.error {
+  position: absolute;
+  top: calc(100% + 16px + 6px);
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: $error-color;
+}

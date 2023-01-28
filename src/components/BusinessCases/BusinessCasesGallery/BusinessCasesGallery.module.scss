@@ -1,0 +1,32 @@
+@import '../../../sass/variables';
+
+.gallery {
+  @media screen and (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 18px;
+    grid-row-gap: 18px;
+  }
+}
+
+.item {
+  transition: opacity 150ms $transition;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  & img {
+    margin: 0 auto;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 0;
+    }
+  }
+}

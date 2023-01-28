@@ -1,0 +1,50 @@
+@use '../../sass/mixins';
+@import '../../sass/variables';
+
+.button {
+  @include mixins.font-style(18px, 1.39);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  text-transform: capitalize;
+  color: $button-color;
+  background-color: $accent-color;
+  border: none;
+  border-radius: 5px;
+  transition: opacity, color, background-color 250ms $transition;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &.solutions,
+  &.blog {
+    margin: 0;
+    background: transparent;
+    border: 1px solid #fff;
+  }
+
+  &.solutions:hover {
+    opacity: 1;
+    color: $accent-color;
+    background-color: #fff;
+    border-color: $accent-color;
+  }
+
+  &.blog:hover {
+    opacity: 1;
+    color: $secondary-color;
+    background-color: #fff;
+    border-color: $secondary-color;
+  }
+
+  &.form {
+    margin: 0;
+    padding: 16px 56px;
+  }
+}

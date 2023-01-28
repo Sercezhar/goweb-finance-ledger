@@ -1,0 +1,67 @@
+@use '../../sass/mixins';
+@import '../../sass/variables';
+
+.hero {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 100%;
+  height: 533px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../../assets/images/home/showcase.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1024px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    height: 768px;
+  }
+}
+
+.content {
+  padding-top: 160px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 0;
+  }
+}
+
+.title {
+  @include mixins.font-style(40px, 1.35, 600);
+
+  margin: 0 auto;
+  margin-bottom: 16px;
+  max-width: 241px;
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    @include mixins.font-style(55px, 1.36, 600);
+
+    max-width: 523px;
+  }
+}
+
+.text {
+  @include mixins.font-style(26px, 1.23);
+
+  margin: 0 auto;
+  max-width: 280px;
+  margin-bottom: 24px;
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    @include mixins.font-style(40px, 1.2);
+
+    max-width: 523px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 799px;
+  }
+}

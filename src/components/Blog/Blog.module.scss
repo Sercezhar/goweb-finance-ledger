@@ -1,0 +1,40 @@
+@use '../../sass/mixins';
+@import '../../sass/variables';
+
+.section {
+  background-color: $secondary-color;
+
+  & img {
+    margin: 0 auto;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.content {
+  padding: 48px 20px 58px 20px;
+}
+
+.title,
+.text {
+  margin-bottom: 24px;
+}
+
+.title {
+  @include mixins.font-style(32px, 1.38);
+
+  @media screen and (min-width: $tablet) {
+    @include mixins.font-style(40px, 1.2);
+  }
+}
+
+.pretitle,
+.text {
+  @media screen and (min-width: $tablet) {
+    @include mixins.font-style(18px, 1.39);
+  }
+}
+
+.pretitle {
+  margin-bottom: 16px;
+}

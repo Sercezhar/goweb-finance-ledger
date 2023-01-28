@@ -1,0 +1,13 @@
+@import '../../sass/variables';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: $footer-bg-color;
+}
+
+.copyright {
+  text-align: center;
+}

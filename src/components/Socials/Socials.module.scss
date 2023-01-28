@@ -1,0 +1,38 @@
+@import '../../sass/variables';
+
+.socials {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+
+  &.team {
+    margin: 0;
+
+    & .item svg:hover {
+      fill: #fff;
+      opacity: 0.7;
+    }
+
+    & .item:not(:last-child) {
+      @media screen and (min-width: $tablet) and (max-width: 1359px) {
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+.item {
+  &:not(:last-child) {
+    margin-right: 25px;
+  }
+
+  & svg {
+    fill: #fff;
+    transition: all 150ms $transition;
+    cursor: pointer;
+  }
+
+  & svg:hover {
+    fill: $accent-color;
+  }
+}

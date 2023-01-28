@@ -1,0 +1,44 @@
+@import '../../sass/variables';
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+
+  & a {
+    position: relative;
+    color: $nav-color;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      @media screen and (min-width: $tablet) {
+        margin-right: 20px;
+      }
+
+      @media screen and (min-width: $desktop) {
+        margin-right: 40px;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 122%;
+      height: 2px;
+      background-color: $accent-color;
+      opacity: 0;
+      transition: opacity 150ms $transition;
+    }
+
+    &.active::after {
+      opacity: 1;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+}

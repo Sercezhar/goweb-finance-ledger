@@ -1,0 +1,54 @@
+@use '../../sass/mixins';
+@import '../../sass/variables';
+
+.section {
+  background-color: $accent-color;
+
+  & img {
+    margin: 0 auto;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.content {
+  padding: 79px 20px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 62px 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 80px 20px 86px 28px;
+  }
+}
+
+.pretitle,
+.text {
+  @media screen and (min-width: $tablet) {
+    @include mixins.font-style(18px, 1.39);
+  }
+}
+
+.pretitle {
+  margin-bottom: 16px;
+}
+
+.title,
+.text {
+  margin-bottom: 24px;
+}
+
+.title {
+  @include mixins.font-style(32px, 1.38);
+
+  @media screen and (min-width: $tablet) {
+    @include mixins.font-style(40px, 1.2);
+
+    max-width: 336px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 562px;
+  }
+}

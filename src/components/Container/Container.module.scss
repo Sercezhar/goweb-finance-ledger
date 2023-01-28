@@ -1,0 +1,33 @@
+@import '../../sass/variables';
+
+.container {
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: $mobile;
+
+  @media screen and (min-width: $tablet) {
+    max-width: $tablet;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  @media screen and (min-width: $desktop) {
+    max-width: $desktop;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+.resetPadding {
+  padding: 0;
+}
+
+.grid {
+  @media screen and (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+}
