@@ -4,6 +4,10 @@
   display: flex;
   justify-content: space-between;
 
+  @media screen and (min-width: $tablet) {
+    @include mixins.font-style(18px, 1.39);
+  }
+
   & a {
     position: relative;
     color: $nav-color;
