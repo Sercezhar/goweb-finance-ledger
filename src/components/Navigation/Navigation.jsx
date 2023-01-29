@@ -8,7 +8,13 @@ function Navigation() {
 
   return (
     <nav className={styles.navigation}>
-      <Link activeClass={styles.active} spy smooth to="home">
+      <Link
+        activeClass={styles.active}
+        offset={scrollOffset}
+        spy
+        smooth
+        to="home"
+      >
         Home
       </Link>
       <Link
