@@ -1,5 +1,5 @@
 import useClickOutside from 'hooks/useClickOutside';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './BusinessCasesGalleryModal.module.scss';
 
 function BusinessCasesGalleryModal({
@@ -12,6 +12,28 @@ function BusinessCasesGalleryModal({
   const modalRef = useRef(null);
 
   useClickOutside(modalRef, closeModal);
+
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if (event.code === 'Escape') {
+        closeModal();
+      }
+
+      if (imageIndex < images.length - 1 && event.code === 'ArrowRight') {
+        nextImage();
+      }
+
+      if (imageIndex > 0 && event.code === 'ArrowLeft') {
+        prevImage();
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  });
 
   return (
     <div className={styles.wrapper}>
