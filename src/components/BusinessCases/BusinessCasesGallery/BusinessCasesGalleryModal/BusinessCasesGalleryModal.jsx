@@ -1,3 +1,5 @@
+import useClickOutside from 'hooks/useClickOutside';
+import { useRef } from 'react';
 import styles from './BusinessCasesGalleryModal.module.scss';
 
 function BusinessCasesGalleryModal({
@@ -7,9 +9,13 @@ function BusinessCasesGalleryModal({
   nextImage,
   closeModal,
 }) {
+  const modalRef = useRef(null);
+
+  useClickOutside(modalRef, closeModal);
+
   return (
     <div className={styles.wrapper}>
-      <div className={styles.imageModal}>
+      <div className={styles.imageModal} ref={modalRef}>
         <img
           src={require(`../../../../assets/images/cases/${images[imageIndex].url}@2x.jpg`)}
           alt="people"
