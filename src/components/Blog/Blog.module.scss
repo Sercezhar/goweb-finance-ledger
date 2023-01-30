@@ -15,6 +15,7 @@
   padding: 48px 20px 58px 20px;
 
   @media screen and (min-width: $tablet) {
+    grid-row: 1;
     padding: 59px 32px;
   }
 

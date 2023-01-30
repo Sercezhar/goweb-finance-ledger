@@ -7,6 +7,8 @@ function Blog() {
   return (
     <section className={styles.section} id="blog">
       <Container resetPadding grid>
+        <ResponsiveImage folder="home" imgName="blog" alt="blog" />
+
         <div className={styles.content}>
           <p className={styles.pretitle}>April 16 2020</p>
           <h2 className={styles.title}>Blog Post One</h2>
@@ -19,8 +21,6 @@ function Blog() {
 
           <Button text="Read Our Blog" secondClass="blog" />
         </div>
-
-        <ResponsiveImage folder="home" imgName="blog" alt="blog" />
       </Container>
     </section>
   );
