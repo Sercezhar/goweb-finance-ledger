@@ -88,10 +88,7 @@ function BusinessCasesGalleryModal({
         {imageIndex > 0 ? (
           <div
             className={styles.wrapperPrev}
-            onClick={() => {
-              handleOnPrevImage(true);
-              prevImage();
-            }}
+            onClick={() => handleOnPrevImage()}
           >
             <button className={styles.buttonPrev} type="button"></button>
           </div>
