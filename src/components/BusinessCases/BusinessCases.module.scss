@@ -6,6 +6,15 @@
   padding-bottom: 40px;
   text-align: center;
   color: $text-color;
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 48px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
 }
 
 .pretitle,

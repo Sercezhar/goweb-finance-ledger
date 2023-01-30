@@ -13,6 +13,14 @@
 
 .content {
   padding: 48px 20px 58px 20px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 59px 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 80px 20px 80px 28px;
+  }
 }
 
 .title,
