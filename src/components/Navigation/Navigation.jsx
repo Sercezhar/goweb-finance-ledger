@@ -7,47 +7,68 @@ function Navigation() {
   const scrollOffset = isMobile ? -120 : -70;
 
   return (
-    <nav className={styles.navigation}>
-      <Link
-        activeClass={styles.active}
-        offset={scrollOffset}
-        spy
-        smooth
-        to="home"
-      >
-        Home
-      </Link>
-      <Link
-        activeClass={styles.active}
-        offset={scrollOffset}
-        spy
-        smooth
-        to="about"
-      >
-        About
-      </Link>
-      <Link
-        activeClass={styles.active}
-        offset={scrollOffset}
-        spy
-        smooth
-        to="cases"
-      >
-        Cases
-      </Link>
-      <Link
-        activeClass={styles.active}
-        offset={scrollOffset}
-        spy
-        smooth
-        to="blog"
-      >
-        Blog
-      </Link>
-
-      <Link activeClass={styles.active} spy smooth to="contact">
-        Contact
-      </Link>
+    <nav>
+      <ul className={styles.navigation}>
+        <li className={styles.navLink}>
+          <Link
+            activeClass={styles.active}
+            offset={scrollOffset}
+            spy
+            smooth
+            to="home"
+            href="#home"
+          >
+            Home
+          </Link>
+        </li>
+        <li className={styles.navLink}>
+          <Link
+            activeClass={styles.active}
+            offset={scrollOffset}
+            spy
+            smooth
+            to="about"
+            href="#about"
+          >
+            About
+          </Link>
+        </li>
+        <li className={styles.navLink}>
+          <Link
+            activeClass={styles.active}
+            offset={scrollOffset}
+            spy
+            smooth
+            to="cases"
+            href="#cases"
+          >
+            Cases
+          </Link>
+        </li>
+        <li className={styles.navLink}>
+          <Link
+            activeClass={styles.active}
+            offset={scrollOffset}
+            spy
+            smooth
+            to="blog"
+            href="#blog"
+          >
+            Blog
+          </Link>
+        </li>
+        <li className={styles.navLink}>
+          <Link
+            activeClass={styles.active}
+            spy
+            smooth
+            to="contact"
+            href="#contact"
+          >
+            Contact
+          </Link>
+        </li>
+      </ul>
     </nav>
   );
 }

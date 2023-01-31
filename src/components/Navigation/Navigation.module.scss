@@ -14,16 +14,6 @@
     color: $nav-color;
     cursor: pointer;
 
-    &:not(:last-child) {
-      @media screen and (min-width: $tablet) {
-        margin-right: 20px;
-      }
-
-      @media screen and (min-width: $desktop) {
-        margin-right: 40px;
-      }
-    }
-
     &::after {
       content: '';
       display: block;
@@ -36,6 +26,7 @@
       background-color: $accent-color;
       opacity: 0;
       transition: opacity 150ms $transition;
+      pointer-events: none;
     }
 
     &.active::after {
@@ -44,6 +35,18 @@
 
     &:hover::after {
       opacity: 1;
+    }
+  }
+}
+
+.navLink {
+  &:not(:last-child) {
+    @media screen and (min-width: $tablet) {
+      margin-right: 20px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-right: 40px;
     }
   }
 }
