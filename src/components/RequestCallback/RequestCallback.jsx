@@ -28,6 +28,9 @@ function RequestCallback() {
     validate,
     validateOnChange: false,
     validateOnBlur: false,
+    onSubmit: (_, { resetForm }) => {
+      resetForm();
+    },
   });
 
   const iconError = (
@@ -44,7 +47,7 @@ function RequestCallback() {
         <div className={styles.content}>
           <h2 className={styles.title}>Request Callback</h2>
 
-          <form className={styles.form} netlify>
+          <form className={styles.form} onSubmit={formik.handleSubmit} netlify>
             <label>
               <input
                 className={styles.inputName}
