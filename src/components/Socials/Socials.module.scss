@@ -8,7 +8,7 @@
   &.team {
     margin: 0;
 
-    & .item svg:hover {
+    & .item:hover svg {
       fill: #fff;
       opacity: 0.7;
     }
