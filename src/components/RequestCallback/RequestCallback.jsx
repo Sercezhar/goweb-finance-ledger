@@ -6,6 +6,12 @@ import icons from '../../assets/icons.svg';
 import styles from './RequestCallback.module.scss';
 
 function RequestCallback() {
+  // const encode = data => {
+  //   return Object.keys(data)
+  //     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+  //     .join('&');
+  // };
+
   const validate = values => {
     const errors = {};
 
@@ -28,7 +34,15 @@ function RequestCallback() {
     validate,
     validateOnChange: false,
     validateOnBlur: false,
-    onSubmit: (_, { resetForm }) => {
+    onSubmit: (values, { resetForm }) => {
+      // fetch('/', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      //   body: encode({ 'form-name': 'contact', ...values }),
+      // })
+      //   .then(() => alert('Success!'))
+      //   .catch(error => alert(error));
+
       resetForm();
     },
   });
@@ -47,7 +61,13 @@ function RequestCallback() {
         <div className={styles.content}>
           <h2 className={styles.title}>Request Callback</h2>
 
-          <form className={styles.form} onSubmit={formik.handleSubmit} netlify>
+          <form
+            className={styles.form}
+            onSubmit={formik.handleSubmit}
+            name="contact"
+            method="post"
+          >
+            <input type="hidden" name="form-name" value="contact" />
             <label>
               <input
                 className={styles.inputName}
@@ -62,7 +82,7 @@ function RequestCallback() {
             <label>
               <input
                 className={styles.inputEmail}
-                type="text"
+                type="email"
                 name="email"
                 placeholder="Enter email*"
                 onChange={formik.handleChange}
