@@ -34,7 +34,7 @@ function RequestCallback() {
     validate,
     validateOnChange: false,
     validateOnBlur: false,
-    onSubmit: (values, { resetForm }) => {
+    onSubmit: values => {
       // fetch('/', {
       //   method: 'POST',
       //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -43,7 +43,7 @@ function RequestCallback() {
       //   .then(() => alert('Success!'))
       //   .catch(error => alert(error));
 
-      resetForm();
+      alert('succses');
     },
   });
 
@@ -61,12 +61,7 @@ function RequestCallback() {
         <div className={styles.content}>
           <h2 className={styles.title}>Request Callback</h2>
 
-          <form
-            className={styles.form}
-            onSubmit={formik.handleSubmit}
-            name="contact"
-            method="post"
-          >
+          <form className={styles.form} method="post">
             <input type="hidden" name="form-name" value="contact" />
             <label>
               <input
