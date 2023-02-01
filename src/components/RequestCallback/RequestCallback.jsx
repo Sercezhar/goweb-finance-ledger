@@ -6,12 +6,6 @@ import icons from '../../assets/icons.svg';
 import styles from './RequestCallback.module.scss';
 
 function RequestCallback() {
-  // const encode = data => {
-  //   return Object.keys(data)
-  //     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-  //     .join('&');
-  // };
-
   const validate = values => {
     const errors = {};
 
@@ -35,15 +29,7 @@ function RequestCallback() {
     validateOnChange: false,
     validateOnBlur: false,
     onSubmit: values => {
-      // fetch('/', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      //   body: encode({ 'form-name': 'contact', ...values }),
-      // })
-      //   .then(() => alert('Success!'))
-      //   .catch(error => alert(error));
-
-      alert('succses');
+      console.log(values);
     },
   });
 
@@ -61,7 +47,11 @@ function RequestCallback() {
         <div className={styles.content}>
           <h2 className={styles.title}>Request Callback</h2>
 
-          <form className={styles.form} method="post">
+          <form
+            className={styles.form}
+            onSubmit={formik.handleSubmit}
+            method="post"
+          >
             <input type="hidden" name="form-name" value="contact" />
             <label>
               <input
