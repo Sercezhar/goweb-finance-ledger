@@ -39,19 +39,7 @@ function RequestCallback() {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({ 'form-name': 'contact', ...values }),
-      })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(response.status);
-          } else if (response.ok) {
-            alert('Success!');
-          } else {
-            alert('Something went wrong!');
-          }
-
-          return response;
-        })
-        .catch(error => alert(error));
+      }).catch(error => alert(error));
     },
   });
 
