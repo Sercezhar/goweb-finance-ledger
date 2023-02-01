@@ -34,12 +34,25 @@ function RequestCallback() {
     validate,
     validateOnChange: false,
     validateOnBlur: false,
-    onSubmit: values => {
+    onSubmit: (values, { resetForm }) => {
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({ 'form-name': 'contact', ...values }),
-      }).catch(error => alert(error));
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(response.status);
+          } else if (response.ok) {
+            alert('Success!');
+            resetForm();
+          } else {
+            alert('Something went wrong!');
+          }
+
+          return response;
+        })
+        .catch(error => alert(error));
     },
   });
 
