@@ -5,7 +5,7 @@ import { useFormik } from 'formik';
 import icons from '../../assets/icons.svg';
 import styles from './RequestCallback.module.scss';
 
-function RequestCallback() {
+function RequestCallback({ notificate }) {
   const encode = data => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -44,15 +44,17 @@ function RequestCallback() {
           if (!response.ok) {
             throw new Error(response.status);
           } else if (response.ok) {
-            alert('Success!');
+            notificate('Thank you!', 'Your request has been received.');
             resetForm();
           } else {
-            alert('Something went wrong!');
+            notificate('Oops!', 'Something went wrong!');
           }
 
           return response;
         })
-        .catch(error => alert(error));
+        .catch(error =>
+          notificate('An error occurred!', `Error code: ${error.message}`)
+        );
     },
   });
 

@@ -1,0 +1,45 @@
+@use '../../sass/mixins';
+@import '../../sass/variables';
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 250ms $transition;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  &.visible {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 3;
+  }
+}
+
+.notification {
+  padding: 30px 20px;
+  height: fit-content;
+  width: 430px;
+  color: $text-color;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.title {
+  @include mixins.font-style(32px, 1);
+
+  margin-bottom: 10px;
+}
+
+.message {
+  @include mixins.font-style(18px, 1.39);
+
+  margin-bottom: 16px;
+}

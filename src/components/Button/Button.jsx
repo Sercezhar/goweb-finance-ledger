@@ -7,6 +7,7 @@ let cx = classNames.bind(styles);
 function Button({
   text = 'Click me',
   type = 'button',
+  callback = null,
   secondClass = null,
   isIcon = false,
 }) {
@@ -19,7 +20,7 @@ function Button({
   );
 
   return (
-    <button className={buttonClasses} type={type}>
+    <button className={buttonClasses} type={type} onClick={callback}>
       {isIcon ? iconArrow : null}
       {text}
     </button>
