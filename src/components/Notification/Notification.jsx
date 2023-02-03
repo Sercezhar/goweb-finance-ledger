@@ -16,6 +16,7 @@ function Notification(props, ref) {
     showNotification(title, message) {
       updateText({ title, message });
       setIsVisible(true);
+      document.body.style.overflow = 'hidden';
     },
   }));
 
@@ -32,7 +33,10 @@ function Notification(props, ref) {
         <Button
           text="OK"
           secondClass="form"
-          callback={() => setIsVisible(false)}
+          callback={() => {
+            setIsVisible(false);
+            document.body.style.overflow = 'auto';
+          }}
         />
       </div>
     </div>
