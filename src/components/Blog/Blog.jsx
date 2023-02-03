@@ -1,13 +1,12 @@
 import Button from 'components/Button';
 import Container from 'components/Container';
-import ResponsiveImage from 'components/ResponsiveImage';
 import styles from './Blog.module.scss';
 
 function Blog() {
   return (
     <section className={styles.section} id="blog">
       <Container resetPadding grid>
-        <ResponsiveImage folder="home" imgName="blog" alt="blog" />
+        <div className={styles.image}></div>
 
         <div className={styles.content}>
           <p className={styles.pretitle}>April 16 2020</p>
