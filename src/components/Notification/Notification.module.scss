@@ -26,20 +26,30 @@
 .notification {
   padding: 30px 20px;
   height: fit-content;
-  width: 430px;
+  width: 260px;
   color: $text-color;
   background-color: #fff;
   border-radius: 5px;
+
+  @media screen and (min-width: $tablet) {
+    width: 430px;
+  }
 }
 
 .title {
-  @include mixins.font-style(32px, 1);
+  @include mixins.font-style(20px, 1.35, 600);
 
   margin-bottom: 10px;
+
+  @media screen and (min-width: $tablet) {
+    @include mixins.font-style(32px, 1);
+  }
 }
 
 .message {
-  @include mixins.font-style(18px, 1.39);
-
   margin-bottom: 16px;
+
+  @media screen and (min-width: $tablet) {
+    @include mixins.font-style(18px, 1.39);
+  }
 }
