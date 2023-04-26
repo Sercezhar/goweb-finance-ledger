@@ -17,10 +17,13 @@
 
 .imageModal {
   position: relative;
-  max-width: calc(100vw - 48px);
-  max-height: calc(100vh - 24px);
   border: 2px solid #fff;
   border-radius: 2px;
+}
+
+.imageModal img {
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 124px);
 }
 
 .details {
