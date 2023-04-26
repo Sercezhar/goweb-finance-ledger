@@ -6,7 +6,7 @@ Finance Ledger is a modern and user-friendly website that provides world-class f
 
 - **React.js:** Finance Ledger is developed using the popular and powerful JavaScript library, React.js. This allows for fast and efficient rendering of UI components, resulting in a smooth and responsive user experience.
 
-- **Dependencies:** The website utilizes several essential dependencies to enhance its functionality, including react-scroll for smooth scrolling navigation, formik for form management, and sass for efficient styling.
+- **Dependencies:** The website utilizes several essential dependencies to enhance its functionality, including *React Scroll* for smooth scrolling navigation, *Formik* for form management, and *SASS* for efficient styling.
 
 - **5 Sections:** Finance Ledger is organized into 5 main sections, making it easy for users to navigate and find the information they need. The sections include:
 
